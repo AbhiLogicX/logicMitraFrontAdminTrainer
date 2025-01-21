@@ -142,6 +142,8 @@ function AddCourses() {
         }
       });
 
+      formDataToSend.append("cslug", formData["ctitle"]);
+
       const response = await axios.post(
         `/courses/create-course`,
         formDataToSend,
@@ -194,7 +196,7 @@ function AddCourses() {
           <div className="w-100  gap-3">
             {/* Form group for coursename*/}
             <div className="form-group  row">
-              <div className="col-12 col-sm-4">
+              {/* <div className="col-12 col-sm-4">
                 <label className="text-white" htmlFor="exampleInputUsername1">
                   Course Slug *
                 </label>
@@ -207,7 +209,7 @@ function AddCourses() {
                   placeholder="Course Slug"
                   onChange={handleChange}
                 />
-              </div>
+              </div> */}
               <div className="col-12 col-sm-4">
                 <label className="text-white" htmlFor="exampleInputUsername1">
                   {" "}
