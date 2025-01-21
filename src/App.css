@@ -1,0 +1,688 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --box-border: #ccaa00;
+  --image-border: #ccaa00;
+  --box-background: #013437;
+  --input-background: #04775a;
+  --input-border: #ccaa00;
+  --btn-backgrond: #ccaa00;
+  --text-color: #ccaa00;
+  --small-box-background: #04775a;
+
+  --text-border: #04775a;
+  --text-border1: #ccaa00;
+  --heading-wieght: 700px;
+  --heading-size: 20px;
+  --boder-radius: 8px;
+  --padding-text: 12px;
+}
+
+/* sidebar  */
+
+.topnavbar {
+  background-color: var(--box-background);
+  box-shadow: 0px 9px 7px 0px #04775a59;
+}
+
+.sidebar {
+  background-color: #04775a !important;
+  transition: width 0.35s linear, 0.35s linear;
+  z-index: 9999999;
+  box-sizing: border-box;
+  min-height: 100vh;
+  height: 100%;
+}
+
+.sidebar-overflow::-webkit-scrollbar {
+  width: 1px;
+  background-color: green;
+}
+.sidebar-overflow::-webkit-scrollbar-button {
+  width: 1px;
+  background-color: green;
+}
+
+.sidebar-overflow::-webkit-scrollbar-corner {
+  width: 1px;
+  background-color: green;
+}
+.sidebar-overflow::-webkit-scrollbar-thumb {
+  width: 1px;
+  background-color: green;
+}
+
+.side-menu {
+  background-color: var(--box-background);
+}
+
+body {
+  background-color: #012628 !important;
+}
+
+body::-webkit-scrollbar {
+  width: 5px;
+  background-color: var(--box-background);
+}
+
+body::-webkit-scrollbar-button {
+  width: 1px;
+  background-color: var(--box-background);
+}
+body::-webkit-scrollbar-corner {
+  width: 1px;
+  background-color: var(--box-background);
+}
+
+body::-webkit-scrollbar-thumb {
+  width: 1px;
+  background-color: var(--box-background);
+}
+
+.top-search-input {
+  border: 1px solid #04775a;
+  padding: 5px;
+}
+
+.top-search-input input {
+  background-color: var(--box-background);
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.input {
+  background-color: var(--small-box-background);
+  border: 1px solid var(--input-border);
+  color: white;
+  /* font-size: 15px; */
+}
+
+.input:focus {
+  background-color: var(--small-box-background);
+  border: 1px solid var(--input-border);
+  color: white;
+}
+.input:focus-within {
+  background-color: var(--small-box-background);
+  border: 1px solid var(--input-border);
+  color: white;
+}
+
+.input::placeholder {
+  color: white;
+  font-size: small;
+}
+
+option {
+  font-size: small;
+}
+select,
+option {
+  font-size: small;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.App {
+  text-align: center;
+}
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bcrumb {
+  background-image: url(../public/imgs/bcrumb.jpg);
+  background-size: cover;
+  background-position: center right;
+}
+
+.section .section-header .section-header-breadcrumb {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.section-header {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  border: none;
+  position: relative;
+  margin-bottom: 30px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.section .section-header h1 {
+  margin-bottom: 0;
+  font-weight: 700;
+  display: inline-block;
+  font-size: 24px;
+  margin-top: 3px;
+}
+
+.section .section-header .section-header-breadcrumb {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.card-header {
+  border-bottom: 1px solid var(--box-border);
+}
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
+  border-radius: 5px;
+  border: 1px solid var(--box-border);
+  position: relative;
+  margin-bottom: 30px;
+  background-color: var(--small-box-background);
+  color: white !important;
+}
+
+.white {
+  color: white !important;
+}
+
+.menu-title1 {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  /* background:#013437; */
+  /* padding: 0.5rem 1.4rem;
+    left: 70px;
+    position: absolute;
+    text-align: left;
+    top: 0;
+    bottom: 0;
+    width: 190px; */
+  z-index: 1;
+  /* line-height: 1.8; */
+  /* -webkit-box-shadow: 4px 0px 7px 0px rgba(182, 185, 189, 0.25); */
+  /* box-shadow: 4px 0px 7px 0px rgba(182, 185, 189, 0.25); */
+}
+.active1 {
+  background: #013437;
+  color: white !important;
+}
+
+.bg-main {
+  background-color: #013437 !important;
+}
+.bg-1 {
+  background-color: #7da0fa !important;
+}
+.bg-1:hover {
+  background-color: #88a8fa !important;
+}
+.bg-2 {
+  background-color: #4747a1 !important;
+}
+.bg-2:hover {
+  background-color: #5454a7 !important;
+}
+.bg-3 {
+  background-color: #7978e9 !important;
+}
+.bg-3:hover {
+  background-color: #8382dc !important;
+}
+.bg-4 {
+  background-color: #f3797e !important;
+}
+.bg-4:hover {
+  background-color: #f68b8e !important;
+}
+
+.icon {
+  height: 1rem;
+  width: 3rem;
+  font-size: 1rem;
+  padding: 3px 10px;
+  border-radius: 5px;
+  color: white;
+  margin: 0 5px;
+  text-decoration: none;
+}
+.icon:hover {
+  height: 1rem;
+  width: 3rem;
+  font-size: 1rem;
+  padding: 3px 10px;
+  border-radius: 5px;
+  color: white;
+  margin: 0 5px;
+  text-decoration: none;
+}
+
+.flag {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  bottom: 10px;
+  right: 150px;
+  border-radius: 50%;
+}
+
+th,
+td {
+  padding: 10px !important;
+  font-size: 0.9rem !important;
+}
+
+label {
+  color: #282c34;
+  margin-top: 2px;
+  font-weight: 600;
+}
+
+/* *******************Student details css ********** */
+
+.Text {
+  color: var(--text-color);
+}
+
+.heading {
+  border-bottom: 2px solid var(--text-border);
+  /* width: 30%; */
+  padding: 5px;
+}
+
+.heading1 {
+  font-size: var(--heading-size);
+  font-weight: var(--heading-wieght);
+}
+
+.box {
+  background-color: var(--box-background);
+  border: 1px solid var(--box-border);
+  border-radius: var(--boder-radius);
+  padding: 15px;
+}
+
+.small-box {
+  background-color: var(--small-box-background);
+  border-radius: var(--boder-radius);
+  padding: var(--padding-text);
+  font-weight: 600px;
+}
+
+.btn-seeAll {
+  background-color: var(--small-box-background);
+  border-radius: var(--boder-radius);
+  border: 1px solid var(--box-border);
+
+  font-weight: 600px;
+}
+.image1 {
+  border: 5px solid var(--image-border);
+}
+
+.btn2 {
+  background-color: var(--btn-backgrond);
+
+  padding: var(--padding-text);
+  border-radius: 8px;
+  font-size: 15px;
+  line-height: 24.2px;
+}
+
+.all-details {
+  padding: 12px;
+  border-bottom: 2px solid var(--text-border);
+}
+
+/* course , transaction , review */
+.AllCTR {
+  overflow: hidden;
+}
+
+.CTR1 {
+  position: absolute;
+
+  top: 31px;
+  left: 0;
+  width: 26%;
+  padding: 5px;
+  border-bottom: 2px solid var(--text-border1);
+}
+
+.CTR2 {
+  position: absolute;
+
+  top: 31px;
+  left: 0%;
+  width: 26%;
+  padding: 5px;
+  border-bottom: 2px solid var(--text-border1);
+}
+.CTR3 {
+  position: absolute;
+  top: 31px;
+  left: 25%;
+  width: 26%;
+  padding: 5px;
+  border-bottom: 2px solid var(--text-border1);
+}
+.CTR4 {
+  position: absolute;
+
+  top: 31px;
+  right: 22%;
+  width: 26%;
+  padding: 5px;
+  border-bottom: 2px solid var(--text-border1);
+}
+
+.CTR5 {
+  position: absolute;
+
+  top: 31px;
+  right: 0;
+  width: 26%;
+  padding: 5px;
+  border-bottom: 2px solid var(--text-border1);
+}
+/* course all active and completed  */
+
+.courses-page {
+  overflow-x: scroll;
+}
+
+.courses-page::-webkit-scrollbar {
+  width: 1px;
+  background-color: none;
+}
+.courses-page::-webkit-scrollbar-button {
+  width: 1px;
+  background-color: green;
+}
+
+.courses-page::-webkit-scrollbar-thumb {
+  width: 1px;
+  height: 1px;
+  background-color: none;
+}
+.courses-page::-webkit-scrollbar-track {
+  width: 1px;
+  height: 1px;
+  background-color: none;
+}
+
+.courses-page::-webkit-scrollbar-track-piece {
+  width: 1px;
+  height: 1px;
+  background-color: none;
+}
+.course-all {
+  border-bottom: 2px solid var(--text-border);
+}
+
+.course-completed {
+  border-bottom: 2px solid var(--text-border);
+}
+
+.course-active {
+  border-bottom: 2px solid var(--text-border);
+}
+
+/* course card  */
+
+.course-card {
+  background-color: var(--box-background);
+  border: 1px solid var(--box-border);
+  border-radius: 40px 40px 10px 0px;
+  padding: 25px;
+}
+
+/* transaction table  */
+
+.Table-overflow::-webkit-scrollbar {
+  width: 1px;
+  background-color: var(--box-background);
+}
+
+.Table-overflow::-webkit-scrollbar-button {
+  width: 1px;
+  background-color: var(--box-background);
+}
+.Table-overflow::-webkit-scrollbar-corner {
+  width: 1px;
+  background-color: var(--box-background);
+}
+
+.Table-overflow::-webkit-scrollbar-thumb {
+  width: 1px;
+  background-color: var(--box-background);
+}
+
+.notification-overflow::-webkit-scrollbar {
+  width: 100%;
+  background-color: var(--box-background);
+}
+
+.notification-overflow::-webkit-scrollbar-button {
+  width: 100%;
+  background-color: var(--box-background);
+}
+.notification-overflow::-webkit-scrollbar-corner {
+  width: 100%;
+  background-color: var(--box-background);
+}
+
+.notification-overflow::-webkit-scrollbar-thumb {
+  width: 100%;
+  background-color: var(--box-background);
+}
+.Ttable {
+  border: 0.5px solid var(--box-border);
+  border-radius: 8px;
+  background-color: var(--box-background);
+}
+
+.Thead {
+  background-color: var(--small-box-background);
+  border-bottom: 2px solid var(--box-border);
+  text-align: center;
+}
+
+.Tbody {
+  background-color: #012628;
+  border-bottom: 0.5px solid var(--box-border);
+  text-align: center;
+}
+
+/* ************Trainer details ************* */
+/* cousr about , transcation  , review , enrolment */
+
+.TCTR1 {
+  position: absolute;
+  top: 31px;
+  left: 0%;
+  width: 20%;
+  padding: 5px;
+  border-bottom: 2px solid var(--text-border1);
+}
+
+.TCTR2 {
+  position: absolute;
+
+  top: 31px;
+  left: 16%;
+  width: 20%;
+  padding: 5px;
+  border-bottom: 2px solid var(--text-border1);
+}
+
+.TCTR3 {
+  position: absolute;
+  top: 31px;
+  left: 34%;
+  width: 20%;
+  padding: 5px;
+  border-bottom: 2px solid var(--text-border1);
+}
+.TCTR4 {
+  position: absolute;
+  top: 31px;
+  left: 52%;
+  width: 20%;
+  padding: 5px;
+  border-bottom: 2px solid var(--text-border1);
+}
+.TCTR5 {
+  position: absolute;
+  top: 31px;
+  right: 11%;
+  width: 20%;
+  padding: 5px;
+  border-bottom: 2px solid var(--text-border1);
+}
+.TCTR6 {
+  position: absolute;
+  top: 31px;
+  right: 0%;
+  width: 20%;
+  padding: 5px;
+  border-bottom: 2px solid var(--text-border1);
+}
+
+.Tbox {
+  background-color: #04775a;
+  border-radius: 18px;
+}
+
+/* ****************88course **************** */
+
+.Cbox {
+  background-color: var(--box-background);
+
+  border-radius: var(--boder-radius);
+  padding: 25px;
+}
+
+.enroll-btn {
+  background: linear-gradient(275.88deg, #d2af00 37.66%, #f6e48b 63.25%);
+  color: #013437;
+}
+
+.Add-btn {
+  background: var(--btn-backgrond);
+  color: #013437;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+a {
+  border: none;
+  outline: none;
+}
+.Add-btn:hover {
+  color: #013437;
+  border: none;
+  outline: none;
+}
+
+.Cancel-btn {
+  background: #adadad;
+  color: #013437;
+  font-weight: 700;
+}
+
+.delete-icon {
+  background: #012628;
+
+  border: 1px solid var(--box-border);
+}
+
+.delete-icon:hover {
+  color: var(--btn-backgrond);
+}
+
+.view-icon {
+  background-color: var(--small-box-background);
+  border: 1px solid var(--box-border);
+}
+
+.view-icon:hover {
+  color: var(--btn-backgrond);
+}
+
+.edit-icon {
+  background: #024c50;
+  border: 1px solid var(--box-border);
+}
+
+.edit-icon:hover {
+  color: var(--btn-backgrond);
+}
+
+.vl {
+  border-left: 3px solid green;
+  height: 30px;
+}
+
+/* ********************batch *********** */
+
+.Batch {
+  background: #ffffff;
+  color: #013437;
+}
+
+.locationdropdown:hover {
+  background-color: var(--small-box-background);
+}

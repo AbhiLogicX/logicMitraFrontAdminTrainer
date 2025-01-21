@@ -1,0 +1,25 @@
+/* src/CircularProgress.css */
+.container {
+  width: 100%;
+  text-align: center;
+  margin-top: 15%;
+}
+
+.circular-progress {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: #3498db;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
