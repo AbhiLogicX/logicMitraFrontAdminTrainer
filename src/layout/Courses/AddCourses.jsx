@@ -7,8 +7,10 @@ import axios from "axios";
 import { toast } from "react-toastify";
 import Home from "../../Home";
 import { Editor } from "@tinymce/tinymce-react";
+import { useAuth } from "../../context/auth";
 
 function AddCourses() {
+  const [auth, setAuth] = useAuth();
   const navigate = useNavigate();
 
   // Fetching the category data for specific id and title
@@ -28,7 +30,7 @@ function AddCourses() {
     cduration: "",
     cfees: "",
     cofferfees: "",
-    ctrainer: "",
+    ctrainer: auth?.userId ? auth?.userId : auth?.user,
     cthumbnail: null,
     ccoverimage: null,
     cdemovideo: "",
@@ -39,7 +41,7 @@ function AddCourses() {
     cassignments: null,
     ccetification: "",
     cprojects: null,
-    cexperience: 0,
+    cexperience: "",
     cdemoCertificate: null,
   };
 
@@ -279,7 +281,7 @@ function AddCourses() {
 
               <div className="col-12 col-sm-4">
                 <label className="text-white" htmlFor="exampleInputUsername1">
-                  Course Duration
+                  Course Duration <small>(in months)</small>
                 </label>
                 <input
                   type="number"
@@ -316,7 +318,7 @@ function AddCourses() {
                   onChange={handleChange}
                 />
               </div>
-              <div className="col-12 col-sm-4  flex flex-col">
+              {/* <div className="col-12 col-sm-4  flex flex-col">
                 <label className="text-white" htmlFor="ctrainer">
                   * Course Trainer
                 </label>
@@ -342,7 +344,7 @@ function AddCourses() {
                       })}
                   </select>
                 </div>
-              </div>
+              </div> */}
 
               {/* <div className="col-12 col-sm-4">
                 <label className="text-white" htmlFor="exampleInputUsername1">

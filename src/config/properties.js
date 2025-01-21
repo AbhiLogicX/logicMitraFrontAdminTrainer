@@ -1,15 +1,15 @@
 export const properties = {
   URLS: {
-    BASE_URL_DEV: "https://api.logicmitra.in",
-    // BASE_URL_DEV: "http://localhost:8000",
+    // BASE_URL_DEV: "https://api.logicmitra.in",
+    BASE_URL_DEV: "http://localhost:8000",
     // BASE_URL_DEV: "https://logicmitra-api.onrender.com",
     // BASE_URL_DEV: "http://localhost:8000",
     // BASE_URL_DEV: "http://147.79.66.213",
     // BASE_URL_PROD: "",
     // BASE_URL_IMG_ONRENDER: "https://logicmitra-api.onrender.com",
     // BASE_URL_IMG_ONRENDER: "http://147.79.66.213",
-    BASE_URL_IMG_ONRENDER: "https://api.logicmitra.in",
-    // BASE_URL_IMG_ONRENDER: "http://localhost:8000",
+    // BASE_URL_IMG_ONRENDER: "https://api.logicmitra.in",
+    BASE_URL_IMG_ONRENDER: "http://localhost:8000",
     // BASE_URL_IMG_ONPROD: "",
   },
 };

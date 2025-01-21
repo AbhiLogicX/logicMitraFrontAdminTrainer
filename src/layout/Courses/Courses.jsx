@@ -237,23 +237,23 @@ function Courses() {
                                 <td className="flex gap-2 items-cente justify-center">
                                   <Link
                                     className="  py-2 px-3 rounded-md view-icon"
-                                    to={`/courses/view/${item.id}`}
+                                    to={`/courses/view/${item._id}`}
                                   >
                                     <i className="bi bi-eye-fill"></i>
                                   </Link>{" "}
                                   <Link
                                     className=" py-2 px-3 rounded-md edit-icon"
-                                    to={`/courses/edit/${item.id}`}
+                                    to={`/courses/edit/${item._id}`}
                                   >
                                     <i className="bi bi-pencil-square"></i>
                                   </Link>
                                   <Link
                                     className="  py-2 px-3 rounded-md delete-icon "
                                     onClick={handleDelete}
-                                    id={item.id}
+                                    id={item._id}
                                   >
                                     <i
-                                      id={item.id}
+                                      id={item._id}
                                       className="bi bi-trash3"
                                     ></i>
                                   </Link>{" "}
