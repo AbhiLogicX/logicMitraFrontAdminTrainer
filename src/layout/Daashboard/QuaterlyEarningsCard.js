@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const QuaterlyEarningsCard = ({ data, detailChange }) => {
   return (
@@ -32,10 +33,11 @@ const QuaterlyEarningsCard = ({ data, detailChange }) => {
             <h2 className="text-4xl text-amber-400 mb-3">
               ₹{data?.data?.summary?.debit + data?.data?.summary?.credit}/-
             </h2>
-
-            <button className="Add-btn py-2 px-3 rounded-md">
-              View Details
-            </button>
+            <Link to={"/transactions"}>
+              <button className="Add-btn py-2 px-3 rounded-md hover:bg-emerald-600">
+                View Details
+              </button>
+            </Link>
           </div>
           <hr className="border-2 border-amber-400 mb-2" />
           <div className="flex gap-3">

@@ -3,8 +3,10 @@ import { useFetch } from "../../hooks/useFetch";
 import { FaTimesCircle } from "react-icons/fa";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useAuth } from "../../context/auth";
 
 const FieldUST = ({ open, setOpen, userId, SetParams, paramsData }) => {
+  const [auth, setAuth] = useAuth();
   const [StudentList, setStudentList] = useState();
   const [TrainerList, setTrainerList] = useState();
   const [UserList, setuserList] = useState();
@@ -70,12 +72,15 @@ const FieldUST = ({ open, setOpen, userId, SetParams, paramsData }) => {
     const fetchdata = async () => {
       try {
         setloading2(true);
-        const student = await axios.get("/user/list?userType=student");
+        const student = await axios.get(
+          `/enroll/enroll-list?trainerid=${
+            auth?.userId ? auth?.userId : auth?.user
+          }`
+        );
 
         setloading2(false);
         seterror2(false);
         if (student.status === 200) {
-          //console.log(student);
           setStudentList(student.data.data);
         } else {
           //console.log("something is fisyy");
@@ -165,7 +170,9 @@ const FieldUST = ({ open, setOpen, userId, SetParams, paramsData }) => {
   const AddList = (event) => {
     //console.log(event.target.id);
     if (open === "StudentList") {
-      const studentdata = StudentList.find((elm) => elm.id === event.target.id);
+      const studentdata = StudentList.find(
+        (elm) => elm.studentid._id === event.target.id
+      );
       if (userId?.includes(studentdata)) {
         toast.warn("user already selected");
         return;
@@ -235,9 +242,15 @@ const FieldUST = ({ open, setOpen, userId, SetParams, paramsData }) => {
                 return (
                   <>
                     <div className="flex gap-3 box p-2  rounded-full items-center">
-                      <h1>{elm.sname}</h1>
-                      <button className="cursor-pointer" id={elm.id}>
-                        <FaTimesCircle id={elm.id} onClick={RemoveList} />
+                      <h1>{elm.studentid?.sname}</h1>
+                      <button
+                        className="cursor-pointer"
+                        id={elm.studentid?._id}
+                      >
+                        <FaTimesCircle
+                          id={elm.studentid?._id}
+                          onClick={RemoveList}
+                        />
                       </button>
                     </div>
                   </>
@@ -294,14 +307,14 @@ const FieldUST = ({ open, setOpen, userId, SetParams, paramsData }) => {
               {StudentList?.map((item) => {
                 return (
                   <>
-                    {item?.sname ? (
+                    {item?.studentid?.sname ? (
                       <div className="flex justify-between box p-2 items-center">
                         <div className="flex gap-2 items-center">
                           <div className="w-8 h-8 ">
                             <img
                               src={
-                                item.sprofilepicUrl === "" ||
-                                !item.sprofilepicUrl
+                                item.studentid?.sprofilepicUrl === "" ||
+                                !item.studentid?.sprofilepicUrl
                                   ? "https://img.freepik.com/premium-vector/account-icon-user-icon-vector-graphics_292645-552.jpg"
                                   : `https://api.logicmitra.com:8086/uploads/user/${item.sprofilepicUrl}`
                               }
@@ -309,13 +322,13 @@ const FieldUST = ({ open, setOpen, userId, SetParams, paramsData }) => {
                               className="w-100 h-100  rounded-full  border-yellow-700 border-2  object-cover"
                             />
                           </div>
-                          <h1>{item.sname}</h1>
+                          <h1>{item.studentid?.sname}</h1>
                         </div>
 
                         <button
                           className="Add-btn px-4 py-1 rounded-md  "
                           onClick={AddList}
-                          id={item.id}
+                          id={item.studentid?._id}
                         >
                           Add
                         </button>

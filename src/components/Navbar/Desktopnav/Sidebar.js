@@ -27,6 +27,7 @@ import { FaUserTag } from "react-icons/fa6";
 import { MdNotificationAdd } from "react-icons/md";
 import { MdEditNotifications } from "react-icons/md";
 import { PiHandWithdraw } from "react-icons/pi";
+import { PiChatsBold } from "react-icons/pi";
 // import { useAuth } from "../../../context/auth";
 
 const Sidebar = ({ setshow, show }) => {
@@ -78,6 +79,32 @@ const Sidebar = ({ setshow, show }) => {
             <NavLink
               className="border-none outline-none flex items-center gap-2 side-menu p-2 rounded-md "
               style={{ color: "white" }}
+              to="/enrollment"
+            >
+              {show ? (
+                <FiUserPlus
+                  className="text-xl
+               "
+                />
+              ) : (
+                <button
+                  className=""
+                  data-toggle="tooltip"
+                  data-placement="right"
+                  title="Enrollment"
+                >
+                  <FiUserPlus className="text-xl" />
+                </button>
+              )}
+              <span className={` ${!show ? "d-lg-none" : "d-block"}`}>
+                Enrollment
+              </span>
+            </NavLink>
+          </li>
+          <li className="">
+            <NavLink
+              className="border-none outline-none flex items-center gap-2 side-menu p-2 rounded-md "
+              style={{ color: "white" }}
               to="/students"
             >
               {show ? (
@@ -102,29 +129,6 @@ const Sidebar = ({ setshow, show }) => {
             <NavLink
               className="border-none outline-none flex items-center gap-2 side-menu p-2 rounded-md "
               style={{ color: "white" }}
-              to="/withdraws"
-            >
-              {show ? (
-                <PiHandWithdraw className="text-xl" />
-              ) : (
-                <button
-                  className=""
-                  data-toggle="tooltip"
-                  data-placement="right"
-                  title="Trainers"
-                >
-                  <PiHandWithdraw className="text-xl" />
-                </button>
-              )}
-              <span className={` ${!show ? "d-lg-none" : "d-block"}`}>
-                Withdraw Requests
-              </span>
-            </NavLink>
-          </li>
-          <li className="">
-            <NavLink
-              className="border-none outline-none flex items-center gap-2 side-menu p-2 rounded-md "
-              style={{ color: "white" }}
               to="/courses"
             >
               {show ? (
@@ -141,33 +145,6 @@ const Sidebar = ({ setshow, show }) => {
               )}
               <span className={` ${!show ? "d-lg-none" : "d-block"}`}>
                 Courses
-              </span>
-            </NavLink>
-          </li>
-
-          <li className="">
-            <NavLink
-              className="border-none outline-none flex items-center gap-2 side-menu p-2 rounded-md "
-              style={{ color: "white" }}
-              to="/enrollment"
-            >
-              {show ? (
-                <FiUserPlus
-                  className="text-xl
-               "
-                />
-              ) : (
-                <button
-                  className=""
-                  data-toggle="tooltip"
-                  data-placement="right"
-                  title="Enrollment"
-                >
-                  <FiUserPlus className="text-xl" />
-                </button>
-              )}
-              <span className={` ${!show ? "d-lg-none" : "d-block"}`}>
-                Enrollment
               </span>
             </NavLink>
           </li>
@@ -216,6 +193,30 @@ const Sidebar = ({ setshow, show }) => {
               )}
               <span className={` ${!show ? "d-lg-none" : "d-block"}`}>
                 Enquiries
+              </span>
+            </NavLink>
+          </li>
+
+          <li className="">
+            <NavLink
+              className="border-none outline-none flex items-center gap-2 side-menu p-2 rounded-md "
+              style={{ color: "white" }}
+              to="/chats"
+            >
+              {show ? (
+                <PiChatsBold className="text-xl" />
+              ) : (
+                <button
+                  className=""
+                  data-toggle="tooltip"
+                  data-placement="right"
+                  title="Batch"
+                >
+                  <PiChatsBold className="text-xl" />
+                </button>
+              )}
+              <span className={` ${!show ? "d-lg-none" : "d-block"}`}>
+                Chats
               </span>
             </NavLink>
           </li>
@@ -276,6 +277,29 @@ const Sidebar = ({ setshow, show }) => {
                 </ul>
               </>
             ) : null}
+          </li>
+          <li className="">
+            <NavLink
+              className="border-none outline-none flex items-center gap-2 side-menu p-2 rounded-md "
+              style={{ color: "white" }}
+              to="/withdraws"
+            >
+              {show ? (
+                <PiHandWithdraw className="text-xl" />
+              ) : (
+                <button
+                  className=""
+                  data-toggle="tooltip"
+                  data-placement="right"
+                  title="Trainers"
+                >
+                  <PiHandWithdraw className="text-xl" />
+                </button>
+              )}
+              <span className={` ${!show ? "d-lg-none" : "d-block"}`}>
+                Withdraw Requests
+              </span>
+            </NavLink>
           </li>
           {/* <li>
             <NavLink

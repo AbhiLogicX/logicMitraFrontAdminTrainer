@@ -27,6 +27,10 @@
   box-shadow: 0px 9px 7px 0px #04775a59;
 }
 
+.scrollable-content::-webkit-scrollbar {
+  display: none;
+}
+
 .sidebar {
   background-color: #04775a !important;
   transition: width 0.35s linear, 0.35s linear;
@@ -82,8 +86,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .top-search-input {
-  border: 1px solid #04775a;
-  padding: 5px;
+  border: 2px solid #04775a;
 }
 
 .top-search-input input {
@@ -685,4 +688,21 @@ a {
 
 .locationdropdown:hover {
   background-color: var(--small-box-background);
+}
+
+.chat-box {
+  background-color: #04775a;
+}
+
+.chat-left {
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: #04775a;
+}
+.chat-right {
+  background-color: #04775a;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
 }

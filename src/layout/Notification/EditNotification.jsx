@@ -3,14 +3,20 @@ import { useFetch } from "../../hooks/useFetch";
 import { Link } from "react-router-dom";
 import Home from "../../Home";
 import { useDelete } from "../../hooks/useDelete";
+import { useAuth } from "../../context/auth";
 
 const EditNotification = () => {
+  const [auth, setAuth] = useAuth();
   const [viewForWhat, setViewForWhat] = useState("");
 
   const [Delete] = useDelete(`/notification/delete-notification?notiId=`);
 
-  const [data, error, loading, reloadData] = useFetch(`/notification/list`);
-  //   console.log("--->", data);
+  const [data, error, loading, reloadData] = useFetch(
+    `/notification/get-user-notification?userId=${
+      auth?.userId ? auth?.userId : auth?.user
+    }`
+  );
+  console.log("--->", data);
 
   const handleViewBtn = (id, forWhat) => {
     setViewForWhat(forWhat);
@@ -51,17 +57,15 @@ const EditNotification = () => {
                           <thead>
                             <tr className="Thead">
                               <th scope="col">Notification Title</th>
-                              <th scope="col">Message</th>
                               <th scope="col">User type</th>
                               <th scope="col">Sent Date</th>
                               <th scope="col">Action</th>
                             </tr>
                           </thead>
                           <tbody className="table-group-divider">
-                            {data.data?.map((item, index) => (
+                            {data.data?.notification?.map((item, index) => (
                               <tr key={index} className="Tbody">
                                 <td id={item._id}>{item.title}</td>
-                                <td>{item.message.substring(0, 10)}...</td>
                                 <td>{item.userType}</td>
                                 <td>{item.date.substring(0, 10)}</td>
                                 <td className="flex gap-2 items-cente justify-center">

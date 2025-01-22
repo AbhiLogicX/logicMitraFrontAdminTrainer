@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import FieldUST from "./FieldUST";
-import { FaTimeline } from "react-icons/fa6";
-import { FaTimes, FaTimesCircle } from "react-icons/fa";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Home from "../../Home";
@@ -39,9 +37,9 @@ const Notification = () => {
       toast.warn("Fill all fields");
       return;
     }
-    try {
-      const allUserIds = params.userId.map((ele) => ele.id);
 
+    try {
+      const allUserIds = params.userId.map((ele) => ele.studentid?._id);
       const formData = new FormData();
       formData.append("title", params.title);
       formData.append("message", params.message);
@@ -88,7 +86,7 @@ const Notification = () => {
           </section>
           <div className="box text-white p-3">
             <div className="flex items-center gap-3">
-              <div className="flex gap-2 items-center">
+              {/* <div className="flex gap-2 items-center">
                 <input
                   type="radio"
                   id="inputelement"
@@ -100,9 +98,9 @@ const Notification = () => {
                   {" "}
                   All Users
                 </label>
-              </div>
+              </div> */}
 
-              <div className="flex gap-2 items-center">
+              {/* <div className="flex gap-2 items-center">
                 <input
                   type="radio"
                   id="inputelement"
@@ -113,7 +111,7 @@ const Notification = () => {
                 <label className="text-white" htmlFor="inputelement">
                   Trainers
                 </label>
-              </div>
+              </div> */}
 
               <div className="flex gap-2 items-center">
                 <input
@@ -124,7 +122,7 @@ const Notification = () => {
                   onClick={() => handleClickOpen("StudentList")}
                 />
                 <label className="text-white" htmlFor="inputelement">
-                  Students
+                  Your Students
                 </label>
               </div>
             </div>

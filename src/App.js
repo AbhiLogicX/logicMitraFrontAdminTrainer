@@ -66,6 +66,7 @@ import CreateSubscription from "./layout/Subscription/CreatSubscription";
 import TrainersSubscribed from "./layout/Trainers/TrainersSubscribed";
 import Withdraws from "./layout/WithdrawRequests/WithDraws";
 import TransactionView from "./layout/Transactions/TransactionsView";
+import ChatSection from "./layout/ChatsSection/ChatSection";
 
 const App = () => {
   return (
@@ -183,6 +184,9 @@ const App = () => {
           {/*Withdraws route*/}
           <Route path="/withdraws" element={<Withdraws />} />
           <Route path="/transactions" element={<TransactionView />} />
+
+          {/*Chats route*/}
+          <Route path="/chats" element={<ChatSection />} />
         </Route>
       </Routes>
     </>

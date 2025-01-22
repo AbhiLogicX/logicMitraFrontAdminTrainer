@@ -17,13 +17,17 @@ function Home({ children }) {
 
   return (
     <>
-      <Topbar setshow={setshow} show={show} />
-      <div className=" flex  pl-0 h-[100%]">
-        <div>
+      <div style={{ position: "sticky" }}>
+        <Topbar setshow={setshow} show={show} />
+      </div>
+      <div className="flex pl-0 h-[91vh] w-full">
+        <div style={{ position: "sticky" }}>
           <DesktopSidebar setshow={setshow} show={show} />
           <MobileSidebar setshow={setshow} show={show} />
         </div>
-        {children}
+        <div className="scrollable-content overflow-y-auto w-full ">
+          {children}
+        </div>
       </div>
     </>
   );
