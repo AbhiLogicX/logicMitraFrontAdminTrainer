@@ -19,6 +19,7 @@
     "bootstrap-icons": "^1.11.3",
     "bootstrap-landing": "file:",
     "chart.js": "^4.4.6",
+    "date-fns": "^4.1.0",
     "firebase": "^11.0.1",
     "framer-motion": "^11.0.5",
     "html-to-text": "^9.0.5",
