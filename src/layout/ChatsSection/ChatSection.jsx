@@ -20,6 +20,7 @@ const ChatSection = () => {
       `/chat/chat-list?userId=${auth?.userId ? auth?.userId : auth?.user}`
     );
   useEffect(() => {
+    // this is fetching of the real time chat
     const interval = setInterval(() => {
       setReloadChat(true);
     }, 5000);
@@ -127,7 +128,7 @@ const ChatSection = () => {
         {conversationPersonImg !== null ? (
           <div className="col-start-3 col-end-12 px-2 h-[91vh]">
             <div
-              className="flex p-2 w-full pb-3"
+              className="flex p-2 w-full pb-3 items-center"
               style={{ borderBottom: "1px solid" }}
             >
               <div className="w-16">
